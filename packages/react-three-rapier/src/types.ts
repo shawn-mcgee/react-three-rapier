@@ -77,6 +77,9 @@ export type RoundConvexMeshArgs = [
   indices: ArrayLike<number>,
   borderRadius: number
 ];
+export type HalfSpaceArgs = [
+  normal: { x: number, y: number, z: number }
+]
 
 export type UseBodyOptions = Omit<RigidBodyOptions, "shape">;
 
@@ -101,7 +104,8 @@ export type ColliderShape =
   | "roundCone"
   | "convexMesh"
   | "roundConvexHull"
-  | "roundConvexMesh";
+  | "roundConvexMesh"
+  | "halfspace";
 
 export type Vector3Tuple = [x: number, y: number, z: number];
 export type Vector4Tuple = [x: number, y: number, z: number, w: number];

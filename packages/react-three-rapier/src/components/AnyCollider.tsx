@@ -24,7 +24,8 @@ import {
   ConeArgs,
   CylinderArgs,
   ConvexHullArgs,
-  RoundCylinderArgs
+  RoundCylinderArgs,
+  HalfSpaceArgs
 } from "../types";
 import {
   cleanRigidBodyPropsForCollider,
@@ -286,3 +287,17 @@ export const ConvexHullCollider = React.forwardRef(
   )
 );
 ConvexHullCollider.displayName = "ConvexHullCollider";
+
+export type HalfSpaceColliderProps =
+  ColliderOptionsRequiredArgs<HalfSpaceArgs>;
+
+/**
+ * A half space collider shape
+ * @category Colliders
+ */
+export const HalfSpaceCollider = React.forwardRef(
+  (props: HalfSpaceColliderProps, ref: ForwardedRef<Collider>) => (
+    <AnyCollider {...props} shape="halfspace" ref={ref} />
+  )
+);
+HalfSpaceCollider.displayName = "HalfSpaceCollider";
